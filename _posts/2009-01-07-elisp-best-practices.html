@@ -1,0 +1,20 @@
+---
+layout: post
+title: ELisp best practices?
+date: 2009-01-07 20:57:46.000000000 +01:00
+categories:
+- Editors
+tags:
+- Editors
+- Religion
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>I've spent some time looking at Emacs Lisp lately and there's a weird ecosystem going on there. ELisp (and I'm thinking primarily about Emacs configuration here) tends to grow organically, because it's paced by a person's learning of the editor. Every now and then someone needs a new function, and they either search or ask around for something similar. Either it's been implemented before and the code can be copied into their local Emacs configuration or they can write a simple version that is sufficient for initial usage. </p>
+<p>The way I tend to grow my Emacs is either piecemeal, as described above, or by reading other people's code. Sharing Emacs configuration code is a long tradition, and there are many webpages dedicated to it (<a href="http://www.dotemacs.de/">DotEmacs</a>, <a href="http://www.emacswiki.org/">there are plenty on the Emacs wiki</a> and <a href="http://github.com/search?q=emacs+OR+dotemacs">ELisp is the 11th most used language on GitHub</a>). Reading someone else's Emacs configuration is a great way to get new ideas. Recently I've found <a href="http://www.djcbsoftware.nl/dot-emacs.html">djcb's dotemacs</a> (he also runs an interesting <a href="http://emacs-fu.blogspot.com/">blog called emacs-fu</a>) and the <a href="http://github.com/technomancy/emacs-starter-kit/tree/master">emacs starter kit</a> very interesting.</p>
+<p>In particular, I noted two things. In djcb's dotemacs, he defines macros for conditional requires, that degenerate gracefully when required libraries are unavailable, instead of erroring. It similarly has a macro when-available, that runs some code if and only if a given function is available. These are used liberally throughout his configuration, making it robust against unexpected environmental differences. When I first saw this I considered it clever (and still do, really) and wondered whether I should include something similar in my Emacs configuration. In the end I decided against it, because I only use Emacs in very similar versions on two machines and version control libraries that are missing from either or both systems. This ensures that I rarely see errors from missing requires or functions. </p>
+<p>In emacs-starter-kit the use of ELPA, the Emacs Lisp Package Archive, intrigued me. I'm a big fan of package management, though I tend to be of the 'one package manager to rule them all (per system)' crowd. Using ELPA instead of (re-)versioning all the external code I use seems like a good idea, though I've put it off for a bit due to the number of comments to the effect of 'workaround for bug in ELPA' in the starter kit. I'd also like a web interface to browse available packages and accompanying source so I can check on the status of all the libraries I already use. </p>
+<p>Thinking about both these things, gracefully accepting the limitations of environment and package management for dependency resolution, I started to wonder about other best practices for ELisp. While Emacs is a huge framework in and of itself, the incremental improvement pattern for building ELisp doesn't exactly invite to build other frameworks. So I wasn't very surprised when I found that the only unit testing framework is quite new and not generally accepted as the right way to test ELisp (<a href="http://www.emacswiki.org/emacs-en/ElUnit">discussion here</a>). </p>
+<p>None of the advice or ideas I've found have really addressed the practice of writing ELisp, maybe with the exception of <a href="http://steve-yegge.blogspot.com/2007/02/my-save-excursion.html">Steve Yegge's save-excursion post</a>. Even people who talk about modularity don't generally mention how to best organize ELisp modularly. This isn't necessarily bad. The lack of clear practices does mean one has to make a lot of judgement calls on what the right thing to do at any given point is, taking into account the one's own requirements and limitations. </p>

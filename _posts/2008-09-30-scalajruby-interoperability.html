@@ -1,0 +1,15 @@
+---
+layout: post
+title: Scala/JRuby interoperability
+date: 2008-09-30 09:20:35.000000000 +02:00
+categories:
+- JVM Languages
+tags: []
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p><a href="http://www.codecommit.com/blog/ruby/integrating-scala-into-jruby">This interesting post by Daniel Spiewak</a> covers a bit of the current state of Scala/JRuby interoperability and suggests a couple ways to improve it. I think interoperability between JVM languages that aren't Java are the next biggest improvement that should be focused on.</p>
+<p>Groovy, JRuby, Scala and the others are generally good languages with good (or at least decent) interoperability with Java, but things get hairy when the various hacks start getting exposed to eachother. This is especially visible in the first example Spiewak shows, on calling the Scala + operator from JRuby. </p>
+<p>Hopefully we'll continue to see work being on this field. I'd love to see the same thing done for calling Scala from Groovy.</p>

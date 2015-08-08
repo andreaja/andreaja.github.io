@@ -1,0 +1,18 @@
+---
+layout: post
+title: Preload application classes on rails 2.1
+date: 2008-10-10 14:51:48.000000000 +02:00
+categories:
+- Frameworks
+tags:
+- jboss
+- jruby
+- rails
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>I've been playing around with deploying JRuby on Rails onto an application server a bit over the last few weeks, and one of the constant annoyances is that the first request takes a goodly amount of time to complete due to Rails not preloading the application classes. With a couple hundred ActiveRecords that need their metadata read from the DB, this can take a while. </p>
+<p>There are a couple of solutions described for preloading applications when deploying on <a href="http://www.modrails.com/">Phusion/Passenger</a>, but there's nothing really for JRuby and application servers. However, it turns out that this behavior is being introduced as default in 2.2, the next version of Rails. The specific commit that introduces it is <a href="http://github.com/rails/rails/commit/3bd34b6">3bd34b6</a>. While it doesn't apply cleanly to 2.1, it's pretty easy to introduce. Since we freeze rails into our application, this solution worked quite well. </p>
+<p>The upshot is that loading the application takes a little longer, but the first request goes down from taking 30-40 seconds on JBoss on my development box to a much snappier 3-4 seconds. This is particularly a benefit when a restarted server isn't access immediately, but only when something important needs to be done a few hours later. </p>

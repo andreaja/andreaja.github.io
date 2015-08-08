@@ -1,0 +1,17 @@
+---
+layout: post
+title: Don't leave broken windows in your code
+date: 2008-11-24 10:58:34.000000000 +01:00
+categories:
+- Code quality
+tags:
+- qa
+- static analysis
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p><a href="http://www.economist.com/science/displaystory.cfm?story_id=12630201&amp;CFID=31056247&amp;CFTOKEN=41038121">This article at the Economist</a> discusses research that shows that the visual state of an area primes people's behavior. If an alley contains graffiti, people are more likely to litter. This effect is called the "broken windows" effect. The original idea was that broken windows would lead to more vandalism and eventually break-ins and more serious crime. </p>
+<p>In my experience, something similar applies in codebases. Excusing a bad practice one time makes it easier to excuse another one later. And even worse, the effect is compounding. A little litter doesn't affect people as strongly as a lot. </p>
+<p>So don't leave broken windows in your code. Run a tight ship and don't let others do it either. There are several ways to do this. Static analysis tools, test coverage metric requirements and plain old code QA all help. More than that, go even further and always clean up code when you find something messy. </p>

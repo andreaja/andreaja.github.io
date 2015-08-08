@@ -1,0 +1,22 @@
+---
+layout: post
+title: Project structure and unit testing with Python
+date: 2008-10-10 20:38:00.000000000 +02:00
+categories:
+- Python
+tags:
+- package management
+- py.test
+- Python
+- unit testing
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>I've picked up Python again recently (<a href="http://lukeplant.me.uk/blog.php?id=1107301645">dangerous, I know</a>), and solved a couple <a href="http://projecteuler.net/index.php?section=problems">euler problems</a> to get back in the feel of things. Being back to Python is a <a href="http://xkcd.com/353/">little bit like flying</a>, but I have noticed one problem. There isn't really a good build and distribution tool for it. </p>
+<p>For each language I use to solve euler problems, I've set up a project with some sort of build tool that compiles the non-interpreted languages and runs unit tests that check the outputs for correctness. When I started solve problems in Python I couldn't really find a good guide to setting up projects, both for filesystem and build tools. I realized that all the Python I'd done previously had either been self-contained scripts or structured in some sort of ad hoc fashion.</p>
+<p><a href="http://jcalderone.livejournal.com/39794.html">This post by Jp Calderone</a> has some good guidelines for filesystem structure. I like that he specifies to make the application usable from the project directory, while still making it installable. The whole setup.py thing is based on distutils, a set of packages for making a python library/application installable. <a href="http://andreasjacobsen.com/2008/10/10/using-python-setuptools-on-the-mac/">Distutils has its set of problems</a>, but is generally pretty good. </p>
+<p>Some further investigation uncovered py.test, part of the <a href="http://codespeak.net/py/dist/">py library</a>. It's appealing for several reasons. First of all, it's very non-intrusive. Tests live in any module, and are named test_something.py or something_test.py. In each of these source files, any function or method that starts with test_ is run. I put all my tests in a submodule of my source module named test and created a test_ file corresponding to each of them, with a test_ function for each of my euler solutions. I could have put them in a module of their own, to keep the tests entirely separate from the solutions module, but I preferred to keep the test module namespaced. </p>
+<p>The second reason I like py.test is the py.test commandline runner. Executing py.test at the top level of any project (in fact, any directory) will send it recursing through subdirectories looking for candidates for testing. The simplicity (compared to, for example, setting up JUnit testing with <a href="http://maven.apache.org/">Maven2</a>) is very satisfying. And while it doesn't integrate directly with distutils, being a simple, unparameterized commandline program means I could easily use it in a script for preparing releases. There's also the <a href="http://buildutils.lesscode.org/">buildutils</a> project, which extends distutils with among other things, py.test integration. </p>
+<p>While neither distutils or py.test present 360 degree solutions to packaging and testing, they have the inherently pleasant feel of many python tools and libraries in that they make dealing with their target problems very easy. These kinds of tools and libraries are part of the many things that make Python a lot like flying. Being able to write executable pseudo-code is another.</p>

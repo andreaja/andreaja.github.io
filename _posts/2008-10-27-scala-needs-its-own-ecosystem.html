@@ -1,0 +1,19 @@
+---
+layout: post
+title: Scala needs its own ecosystem
+date: 2008-10-27 14:59:38.000000000 +01:00
+categories:
+- JVM Languages
+tags:
+- JVM Languages
+- scala
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>In <a href="http://www.gracelessfailures.com/2008/10/scala-richstring-is-not-comparable-to.html"> this post on Graceless Failures</a>, John Kalucki points out that Scala's RichString and Java's String are completely uncomparable. Neither the == operator nor the equals method return correct equality when comparing RichInt with Integer either. Kalucki's conclusion is to avoid RichStrings when possible, and coerce any back to String as soon as possible. I've bumped into this sort of thing a bit too often when writing Scala, and find it frustrating. The extensions to basic classes done in Scala work against the powerful typing system in my opinion, and the result is impedence rather than clarity. </p>
+<p>At the time of this writing the only reply is from Martin Odersky, stating that this problem is going to be solved in version 2.8.0. I find it interesting that he views this as a language level problem. To a degree, it obviously is. If the language did something that made Java primitive boxing classes and Scala Rich primitives directly comparable, the problem would be solved. </p>
+<p>This neglects the correct tool for the job, something that Scala design tends to do because of its focus on language level solutions. To me, the reliance on Java types implies a lack of appropriate Scala libraries and Scala library wrappers. One of the advantages of Scala is living in the Java ecosystem, but since Scala has its own idiomatic styles, we're generally better off wrapping Java libraries in Scala code so that they appear to the user as Scala styled libraries. This might seem like a waste of time and effort, but the upshot is worth it. The client code becomes cleaner, more Scala-like and easier to read since it doesn't expend noise on working around Java/Scala integration issues. </p>
+<p>However, as Martin Odersky's comment implies, the Scala research team intends to continue playing whack-a-mole with language design to make Java and Scala completely interoperable (or something). This is natural, solving these problems at a language level is much more interesting than writing libraries and wrapper APIs. But that doesn't mean it's more useful. And while the Rich primitives are one example of such a problem, it's far from the only one. The Scala collections library is horrendously incompatible with the Java collections, and with good reason. I would never want an implicit conversion to change the semantics of my underlying types! RichStrings and Strings may be semantically alike, but a Scala immutable Set and a Java Set are not. (Yes, I could make the Java Set immutable, but I've yet to encounter the Java library that returns immutable collections.) </p>
+<p>If Scala is to gain more mainstream adoption, development on libraries and frameworks needs to be the next big push, not further language improvements. This is, I guess, the disadvantage of a research institution driving development. We can rely on the EPFL continuing to work on and maintain Scala, but unlike a business value oriented company like Sun, we can't rely on them taking on tasks without research value. This isn't a completely bleak situation though, since this is open sourced software, the Scala community can take action and make the necessary push. Scala needs its own ecosystem. In the long run we just can't rely on the Java ecosystem, because there's too much cognitive dissonance going on. </p>

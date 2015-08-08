@@ -1,0 +1,41 @@
+---
+layout: post
+title: Upgrading Ubuntu after EOL
+date: 2008-12-31 02:58:16.000000000 +01:00
+categories:
+- System Administration
+tags: []
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>I have a box with Ubuntu 7.10 (Feisty Fawn), which EOLed back in October. Now that I have a few days to spare over the holidays I thought I'd get around to upgrading it to something current. Unfortunately when Feisty was EOLed they moved the package repositories. The new mirror is at old-releseases.ubuntu.com. </p>
+<p>The error I was getting looked like this:<br />
+  {% highlight text %}
+# do-release-upgrade
+....
+E: Some index files failed to download, they have been ignored, or old ones used instead.
+{% endhighlight %}
+<p>To correctly upgrade, I did as follows:</p>
+{% highlight text %}
+# sed -ie 's#us.archive.ubuntu.com#old-releases.ubuntu.com#' /etc/apt/sources.list
+# apt-get update &amp;&amp; apt-get upgrade -y
+{% endhighlight %}
+<p>Apt should correctly update all packages to your EOLed release's final version. When that was done, I was ready to upgrade to Gutsy. The upgrade manager the Ubuntu folks have come up with is pretty slick, but doesn't take into account that you might be running an apt mirror that doesn't also serve the version of the distro you're upgrading to. Oops. Getting it sorted isn't that big a deal. I started it.</p>
+<p>Then, when prompted for information about my mirrors, I backgrounded do-release-upgrade with C-z and fixed my source.list again, this time to reflect a repository that was invalid for Feisty, but valid for Gutsy:<br />
+{% highlight text %}
+# do-release-upgrade
+...
+Updating repository information
+No valid mirror found
+While scanning your repository information no mirror entry for the upgrade was found.This can happen if you run a internal mirror or if the mirror information is out of date.<
+Do you want to rewrite your 'sources.list' file anyway? If you choose 'Yes' here it will update all 'feisty' to 'gutsy' entries.
+If you select 'no' the update will cancel.
+Continue [yN]
+[1]+  Stopped                 do-release-upgrade
+# sed -if 's#old-releases.ubuntu.com#us.archive.ubuntu.com#' /etc/apt/sources.list
+# fg
+y
+{% endhighlight %}
+<p>And after that it was all smooth sailing.</p>

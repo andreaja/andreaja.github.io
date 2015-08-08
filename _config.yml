@@ -1,0 +1,17 @@
+# Site settings
+title: Andreas Jacobsen's Distraction
+owner:
+  display_name: Andreas
+email: blog@andreasjacobsen.com
+description: Another cause of procrastination
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://andreasjacobsen.com" # the base hostname & protocol for your site
+timezone: Europe/Oslo
+permalink: /:year/:month/:day/:title/
+twitter_username: andreaja
+github_username:  andreaja
+excerpt_separator: <!--more-->
+
+# Build settings
+highlighter: pygments
+markdown: kramdown

@@ -1,0 +1,23 @@
+---
+layout: post
+title: Use git tags
+date: 2008-10-01 16:15:46.000000000 +02:00
+categories:
+- version control
+tags:
+- git
+- github
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>I'm quite fond of <a href="http://git.or.cz/">Git</a>. <em>The</em> home of Git projects on the web is <a href="http://github.com">GitHub</a>. A lot of good projects, mostly <a href="http://github.com/languages">Ruby and JavaScript</a> related, but also others. It's a popular home for <a href="http://github.com/search?q=dotfile">dotfiles</a> as well.</p>
+<p>Unfortunately, the practice of tagging releases isn't as common as it should be. Tags are pretty much just aliases for commits, though they can be annotated and even GPG signed (so, for example, no one can fake a Linux kernel tag by Linus). Part of that may be that Git doesn't push tags by default.</p>
+<p>But pushing a tag is easy, just add the --tags parameter to the push and it'll push all your tags.</p>
+<p>{% highlight bash %}git push --tags origin master{% endhighlight %}</p>
+<p>Or, if you only want to push a single tag, you can push the tag directly.</p>
+<p>{% highlight bash %}git push origin mynewtag{% endhighlight %}</p>
+<p>Unlike Subversion tags, these won't create whole new copies of the repository that can accidentally be committed to.</p>
+<p>Tags are very useful when dealing with different releases of a project and you find yourself wondering what code was like in a previous version or a version past what you're currently using. Being able to browse the source directly on a site like GitHub is very valuable, but having to look up the what commit has a comment like "bumping version" is annoying and time consuming. Not to mention that it's more difficult to trust any old comment. </p>
+<p>So please tag your releases. It doesn't take a lot of effort and makes life easier for people using your project.</p>

@@ -1,0 +1,20 @@
+---
+layout: post
+title: We are all library producers
+date: 2008-12-03 13:02:34.000000000 +01:00
+categories:
+- JVM Languages
+tags:
+- JVM Languages
+- scala
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>Debasish Ghosh <a href="http://debasishg.blogspot.com/2008/12/guidos-thoughts-on-scala.html">has written a counter</a> to <a href="http://neopythonic.blogspot.com/2008/11/scala.html">Guido Von Rossum's post on Scala</a>. As per usual, Debasish's post is a great read, but it includes one Scala communityism that I find offputting.</p>
+<blockquote><p>Another excellent point that has been raised by David Pollak in one of the comments to Guido's post is that we need to judge complexity of language features separately depending on whether you are a library producer or a library consumer. As a library producer, you need to be aware of many of the aspects of Scala's type system, which may not be that essential as a library consumer.</p></blockquote>
+<p>The fact that developers come in varying levels of competence and interest is not to be conflated with the idea that somehow only some of us create these magical things called "libraries". Unfortunately, there's no divide there. Everyone writes code. Almost everyone reuses some that code. The way to reuse code is to perform some sort of abstraction on a problem. The type of abstraction used depends to an extent on the language and the linguistic background of the developer in question. A Java developer will generally reach for classes and methods, a C developer will reach for pointers, a Scheme developer will reach for functions and so on.</p>
+<p>The job of a language is not to divide these developers into categories (those who do understand the type system and those that don't) and from that decree who can create reusable code. The job of a language is to facilitate abstraction to all developers. If developers can't grasp the abstractions provided by the language, they're simply going to ignore them. Working with people who ignore a language's abstractions is not some sort of desirable situation. In other words, Scala developers need to have at least tenuous grasp of the type system. If not, they're going to be negative producers on their project.</p>
+<p>There are, if you will, two axes of difficulty a language can be gauged on. One is the essential complexity the language inflicts on you when building abstractions, the other is the rote work it demands you do to build them. The standard Java gripe is that while the essential complexity is fairly low, the amount of rote work is high. The justification for this is that the level of entry is low, but you can build anything you need. Plus you can scale up the number of Java developers infinitely, so rote work gets done easily. Whereas Ruby and Python sacrifice type safety to lower the amount of rote work without increasing the essential complexities of abstractions (I'd even say lowering them), Scala sacrifices essential complexity for more type safety and lower amounts of rote work. I'd also agree that the essential complexity can be traded off. That is, more complicated constructs one place can provide less complicated other places. But this isn't unique to Scala, <em>every language has this feature</em>. It's called abstraction.</p>
+<p>Scala is good, but this line about allowing stupid developers to consume the magic mushrooms grown by the smart developers is getting old fast. It's simply not true nor a viable argument in favor of using a language.</p>

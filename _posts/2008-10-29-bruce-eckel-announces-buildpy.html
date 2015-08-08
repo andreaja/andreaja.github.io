@@ -1,0 +1,20 @@
+---
+layout: post
+title: Bruce Eckel announces build.py
+date: 2008-10-29 10:45:51.000000000 +01:00
+categories:
+- Python
+tags:
+- build tools
+- build.py
+- Python
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>Here was me <a href="http://andreasjacobsen.com/2008/10/10/27/">complaining about the lack of good build tools for Python</a> and in a <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=241209">wonderful synchronicity Bruce Eckel's gone and made a new one</a>. The post is part of a longer series on Python decorators, which is worth reading in its own right. </p>
+<p>Aside from the unfortunate name (can we hope it gets changed to something more googlable?), the tool looks interesting. The basic idea is to use decorators to define rules and plain Python functions to fulfill them. It looks based on the older style build tools (like Make, Ant and Rake) where one uses recipes to build rather than inferring targets from project structures and compiler configurations (like Maven and Buildr). This isn't necessarily bad, as it gives more finegrained control of what happens as a part of a build. </p>
+<p>The key feature that build.py brings from Rake is that the build tool allows you to use a fully featured programming language to define how tasks are executed. This is important for allowing users to create tasks that aren't predicted by plugin makers for the original build tool. </p>
+<p>This is still just the first release, and it should be more fleshed out as he finishes the Python book he's using build.py for. I look forward to seeing future developments and adoption.</p>
+<p>(Incidentally, someone mentioned <a href="http://www.zedshaw.com/projects/vellum/">Vellum</a> in the comments on the post. It's probably worth looking into as well.)</p>

@@ -1,0 +1,21 @@
+---
+layout: post
+title: Static analysis of code is good
+date: 2008-11-09 20:39:29.000000000 +01:00
+categories:
+- Religion
+tags:
+- Java
+- Ruby
+- static analysis
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>I happen to believe that more static analysis of programs tends to be better. That is, running pre-runtime analysis on a program to find faults is usually beneficial. I'm including automated testing in the definition of "pre-runtime", because no one (no one sane anyway) waits until their program is live to run automated tests.</p>
+<p>The one case in which I clearly disagree with the benefits of static analysis is parse-time checking of type safety. Not that parse-time type checking is bad, but that it's not worth the programming language overhead. Reconciling these two beliefs isn't trivial. Most static analysis requires some sort of ceremony to run. The main difference between parse-time type checking and unit tests are that the type checking is <a href="http://www.25hoursaday.com/weblog/2008/11/08/CIsTheNextPythonDuckTypingAndC40.aspx">probably</a> going to change what language you're writing. But the idea that unit tests don't change your code is bunk. Good testing requires design changes, simply because any code that isn't easy to test is better off being refactored into code that is easy to test. So if all static analysis can potentially change how we write code, why shouldn't we allow pre-runtime type-safety checks to affect our language choice?</p>
+<p>It's difficult to say what language is better without resorting to personal preference and problem areas, the latter being much more important in practice. I'd be unwilling to undertake any project requiring more than 100 lines of code without having a automated testing framework available for that language. Thankfully, most languages have a good implementation by now.</p>
+<p>So what does parse-time type checking do that other static analyses don't? As mentioned previously,  it's done inline. This applies whether or not your static typing is verbose (as with Java) or terse (as with Haskell). The inlining creates noise. Not all static type information is noise, but much of it is. The little documenting effect gained from it is not offset by the added overhead. The only caveat to that sentence is that I haven't used enough terse static typing languages to comment with any authority on them. Like with everything else, I might be wrong, but in this case it'll take much less to convince me that I am.</p>
+<p>In addition to inlining the static analysis, parse-time type chkcing is tightly coupled to the code. This is more important than the inlining in my mind. There is a loose coupling between testing frameworks and testable code. If a framework is found to be lacking, it can be exchanged for another one without rewriting the entire application. The same goes for other lint-like analysis tools. They live outside the application, so can be used interchangably and stacked. With language type systems you're stuck with whatever your language gives, including all its warts and annoyances.</p>
+<p>So that's why I was glad to see <a href="http://www.infoq.com/news/2008/11/static-analysis-tool-roundup">this round-up of the state of static analysis tools for Ruby on InfoQ</a>. While I quite like Ruby's type system, along with its lack of type annotations and parse-time checking, I'm much more interested in reading about what static analysis is available for it than whether Java's typing is superior to it or vice versa.</p>

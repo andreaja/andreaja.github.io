@@ -1,0 +1,56 @@
+---
+layout: post
+title: Using Python setuptools on the mac
+date: 2008-10-10 23:00:26.000000000 +02:00
+categories:
+- Python
+tags:
+- macosx
+- package management
+- Python
+- setuptools
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>Python's standard tool for package management is setuptools. The version of setuptools bundled with Mac OS X Leopard is 0.6c7. Unfortunately, setuptools is not self-upgrading, in that it won't replace the easy_install script in /usr/bin, and there's no official .dmg/.pkg to upgrade it. This is important because the easy_install script that's used to install new packages has a hardcoded version of setuptools in it, that it reads from the Python libraries bundled with Leopard.</p>
+<p>The hardcoded version string in easy_install became a problem when I tried to install a package that relied on a newer version of setuptools:<br />
+  {% highlight text %}
+  $ sudo easy_install -U py
+Searching for py
+Reading http://pypi.python.org/simple/py/
+Reading http://pylib.org
+Reading http://codespeak.net/py/0.9.2/download.html
+Reading http://codespeak.net/py
+Reading http://pypi.python.org/simple/py/XXX
+Best match: py 0.9.2
+Downloading http://pypi.python.org/packages/source/p/py/py-0.9.2.zip#md5=8447b2ba4c7b4062fcd08aab3377f040
+Processing py-0.9.2.zip
+Running py-0.9.2/setup.py -q bdist_egg --dist-dir /tmp/easy_install-PWyaOs/py-0.9.2/egg-dist-tmp-qz0KLA
+The required version of setuptools (&gt;=0.6c8) is not available, and
+can't be installed while this script is running. Please install
+  a more recent version first, using 'easy_install -U setuptools'.
+(Currently using setuptools 0.6c7 (/System/Library/Frameworks/Python.framework/Versions/2.5/Extras/lib/python))
+error: Setup script exited with 2
+  {% endhighlight %}
+<p>Installing a newer version of setuptools didn't actually help, since easy_install doesn't get touched by this. There are two (sensible solutions) to this. Either edit /usr/bin/easy_install to reflect the newer version of the setuptools package, or use the easy_install module from python rather than the executable. The latter is preferable since it doesn't involve manually changing stuff in /usr/bin, which is just plain wrong.</p>
+<p>So this is how to correctly install packages that rely on a version of setuptools newer than .6c7 on a Mac:<br />
+{% highlight text %}
+$ sudo python -m easy_install py
+Searching for py
+Best match: py 0.9.2
+Processing py-0.9.2-py2.5-macosx-10.5-i386.egg
+Adding py 0.9.2 to easy-install.pth file
+Installing py.cleanup script to /usr/local/bin
+Installing py.lookup script to /usr/local/bin
+Installing py.countloc script to /usr/local/bin
+Installing py.rest script to /usr/local/bin
+Installing py.test script to /usr/local/bin
+
+Using /Library/Python/2.5/site-packages/py-0.9.2-py2.5-macosx-10.5-i386.egg
+Processing dependencies for py
+Finished processing dependencies for py
+{% endhighlight %}
+<p>This works because python searches sys.path, and the /Library/Python site packages are placed before the bundled packages.</p>
+<p>The state of easy_install isn't that great. There are basically three alternatives to installing python packages. One is to use the OS package manager, which works on Linux distros like Debian/Ubuntu, where just about everything is ported to a .deb and put in the apt repositories. Unfortunately, macports <a href="http://www.macports.org/ports.php?by=name&amp;substr=python">doen't have many python packages</a>. The other is to use easy_install, warts and all. The third is to download source distros and use distutils to install them (using python setup.py install), which has a very nice retro feel to it. Fortunately, <a href="http://www.openplans.org/projects/topp-engineering/blog/2008/09/24/pyinstall-a-new-hope/">help does seem to be on the way</a>.</p>

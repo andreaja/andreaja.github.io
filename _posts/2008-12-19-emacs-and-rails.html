@@ -1,0 +1,34 @@
+---
+layout: post
+title: Emacs and Rails
+date: 2008-12-19 20:46:47.000000000 +01:00
+categories:
+- Editors
+tags:
+- eclipse
+- Editors
+- emacs
+- netbeans
+- textmate
+- vi
+meta:
+  _edit_last: '888405'
+  enclosure: |
+    http://peepcode.com/system/uploads/2008/peepcode-emacs-in-5-demo.mov
+    14779892
+    video/quicktime
+author:
+  display_name: Andreas
+---
+<p>So it seems the Rails community is looking at alternative editors. <a href="http://www.danielfischer.com/2008/12/16/emacs-on-osx-for-ruby-on-rails-development/">This post by Daniel Fischer gives a pretty good overview</a>. I have to say I approve. Not that TextMate isn't good. It is. But it's very cool for Emacs (and Vi!) that a community that focusses a lot on sharing knowledge and techniques is taking up these editors. </p>
+<p>For me <a href="http://www.vimeo.com/1013263">this video on ido-mode</a> was a big win. I'm also a fan of the <a href="http://peepcode.com/system/uploads/2008/peepcode-emacs-in-5-demo.mov">Emacs in 5 minutes demo</a>, and there are many more <a href="http://www.emacswiki.org/emacs-ja/EmacsScreencasts">here</a>. There are also a couple blog posts going around on experiences with both vi and Emacs, usually comparing them to TextMate. What these three have in common is composability and scriptability. I constantly butt my head against the lack of it in fullblown IDEs. Eclipse, which I spend a bit of time in from day to day, doesn't even have any decent support or plugins for keyboard macros. It's so easy to forget when dealing with editors that recognize ASTs that programming is fundamentally about editing. Sure, the stuff that we can do with refactoring tools is impressive, but if it's taking focus away from thinking about how you can do your own refactorings, it's probably hurting as much as it's helping.</p>
+<p>Here's some emacs stuff I use regularly. My dotemacs stuff is <a href="http://github.com/andreaja/dotemacs/tree/master">available at github</a> if anyone's interested.</p>
+<ul>
+<li><a href="http://www.emacswiki.org/emacs/InteractivelyDoThings">ido-mode</a> - A minor mode that makes many functions autocompleting. My favorite little touch is how it looks at recently opened files when trying to autocomplete filenames. I use this to look up configuration files deep in Java projects quite a bit. </li>
+<li><a>tramp-mode</a> - Open files over almost any remote (or local) protocol. The linked page has find-alternative-file-with-sudo that opens local files with sudo, which is nice.</li>
+<li><a href="http://code.google.com/p/yasnippet/">yasnippet</a> - Obligatory snippet minor-mode. I'm not a huge fan of the default binding to tab, so I'll need to find a better one eventually.</li>
+<li><a>nxml-mode</a> - A superior editing mode for XML and XHTML. I don't even use this properly (yet), and it's still superior to Eclipse's default XML editor.</li>
+<li>Various language modes - There's a fantastic major-mode for Erlang. There's a great one for Scala (superior to anything I've seen in an IDE with one caveat: I can't get maven projects to compile correctly, yet). I haven't tried out js2-mode yet, but I've heard good things. In general people create these for Emacs sooner and better than many IDEs (though some of the NetBeans 7 stuff looks impressive.)  </li>
+</ul>
+<p>I use Emacs on Ubuntu 8.10, where I use emacs-snapshot-gtk, which is a stable snapshot from CVS. On Mac OS X  I use Carbon Emacs, though I'm probably going to move to a build of Emacs.app next time I upgrade. Carbon Emacs is pretty good, but has a couple of weirdisms that I don't like. For example, the zoom button doesn't fill the screen, it just makes the frame 80 columns wide (fixed by max-frame). </p>
+<p>While I've taken a couple potshots at IDEs in this post, I'd like to emphasize that while there is a difference in philosophy, and I adhere to the "editor first, code manager second" philosophy, but the IDEs are getting there. The editors didn't just start out awesome at editing, and the IDEs didn't just start out awesome at code managing. Both of them are constantly improving and the choice for the future isn't necessarily clear. All in all, I'd say it's a good time for both of them. More people are diversifying, both between editors and IDEs. This is a good thing too, as it'll drive improvement further. </p>

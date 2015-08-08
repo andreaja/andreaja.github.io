@@ -1,0 +1,21 @@
+---
+layout: post
+title: Static vs dynamic isn't about typing
+date: 2008-10-15 17:17:50.000000000 +02:00
+categories:
+- Religion
+tags:
+- C
+- Java
+- Python
+- Ruby
+- static vs dynamic
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>In <a href="http://olabini.com/blog/2008/10/the-maintainence-myth/">this post about maintenance of applications written in dynamic languages</a> Ola Bini stirs up the whole static vs dynamic debate (again). It's a post well worth reading, especially the comments. One thing Bini points out is that in the context of this discussion, normally, statically typed language is a synonym for Java (and possibly C#), and dynamically typed means Python and Ruby.</p>
+<p>This really is a key observation. If you say static typing is too verbose, anyone who's familiar with OCaml, Haskell or Scala disagrees. But the fact is that our current selection of useful statically typed languages are verbose. C# isn't quite as bad as Java, but Java is terrible.</p>
+<p>The question then becomes whether Ruby or Python are less maintainable than Java. In my experience, the answer is 'that really depends on your project'. Maintainability isn't a language feature. No matter what language someone is writing they can create code that is difficult to maintain. The qualities of maintainable code is different in different style languages. A coding style that may be easier to deal with down the line with one language can be more difficult in another language. </p>
+<p>In my experience tests are more far important than static type checking when doing refactorings. And personally, I find Java to be worse for reading code than Ruby or Python. People easily become thoughtless code generators when dealing with Java. Just keep hitting ctrl+space until it compiles, right? Meanwhile, languages like Ruby and Python make you focus on what the code actually does when it runs. Neither of these statements are absolutes and they're both limited by my experience, but I have seen both sides of things and my preference is clear. </p>

@@ -1,0 +1,19 @@
+---
+layout: post
+title: Finding the name of a Perl sub routine from its reference
+date: 2009-11-17 12:54:35.000000000 +01:00
+categories:
+- Tips &amp; Tricks
+tags:
+- real-world
+meta:
+  _edit_last: '888405'
+author:
+  display_name: Andreas
+---
+<p>While mucking around with Perl's Test::Simple I needed to find out the name of a sub routine from a reference. While there are several answers, finding any useful ones by the usual means was difficult. The one I landed on was using <a href="http://search.cpan.org/dist/Sub-Identify/">Sub::Identify</a>, which provides the routine sub_name($) that solves the problem nicely. </p>
+<p>Here's some example code:<br />
+{% highlight text %}
+perl -MSub::Identify -e 'sub bar{return "baz"};$foo=\&amp;bar;print Sub::Identify::sub_name($foo). "\n"'
+{% endhighlight %}
+<p>This correctly prints "bar". </p>
