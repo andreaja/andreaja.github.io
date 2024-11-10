@@ -212,19 +212,123 @@ ul, ol {
     margin-bottom: var(--spacing-sm);
 }
 
+/* Footer Container */
+.site-footer {
+    background-color: var(--color-foreground);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-2xl);
+    border-top: 1px solid var(--color-border);
+}
 
+.site-footer .wrapper {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
 
-/* Responsive adjustments */
-@media (width <= 768px) {
-    html {
-        font-size: 14px;
+/* Footer Heading */
+.footer-heading {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary-dark);
+}
+
+/* Footer Columns Layout */
+.footer-col-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Social Media List */
+.social-media-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-media-list li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-media-list a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-copy-light);
+    transition: color 0.2s ease;
+}
+
+.social-media-list a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* Social Icons */
+.icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: var(--spacing-sm);
+    vertical-align: middle;
+}
+
+.icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.icon svg path {
+    transition: fill 0.2s ease;
+}
+
+.social-media-list a:hover .icon svg path {
+    fill: var(--color-primary);
+}
+
+/* Username Display */
+.username {
+    font-size: 0.9rem;
+}
+
+/* Footer Text */
+.text {
+    color: var(--color-copy-light);
+    font-size: 0.9rem;
+}
+
+/* Footer Credits */
+.footer-footer {
+    display: block;
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-copy-lighter);
+    font-size: 0.8rem;
+}
+
+.footer-footer a {
+    color: var(--color-primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-col-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
-    
-    .nav ul {
-        flex-direction: column;
+
+    .site-footer {
+        padding: var(--spacing-lg) var(--spacing-md);
     }
-    
-    .container {
-        padding: 0 var(--spacing-sm);
+
+    .footer-col {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .social-media-list li {
+        margin-bottom: var(--spacing-xs);
     }
 }
+
