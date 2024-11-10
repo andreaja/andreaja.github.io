@@ -109,11 +109,6 @@ ul, ol {
     list-style: none;
 }
 
-.post-meta {
-    font-size: 0.8rem;
-    color: var(--color-copy-lighter);
-}
-
 /* Header Container */
 .site-header {
     background-color: var(--color-foreground);
@@ -292,7 +287,7 @@ ul, ol {
 /* Post Metadata */
 .post-meta {
     font-size: 0.9rem;
-    color: var(--color-copy-light);
+    color: var(--color-copy-lighter);
     margin-top: var(--spacing-xl);
     padding-top: var(--spacing-md);
     border-top: 1px solid var(--color-border);
