@@ -258,6 +258,10 @@ ul, ol {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--color-copy);
+
+    /* Ensure code blocks don't overflow their containers */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .post-content p {
@@ -329,12 +333,6 @@ code {
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 4px;
     font-size: 0.9em;
-}
-
-/* Ensure code blocks don't overflow their containers */
-.post-content {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
 }
 
 
