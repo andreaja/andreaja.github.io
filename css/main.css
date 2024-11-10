@@ -182,43 +182,6 @@ ul, ol {
     padding: var(--spacing-sm);
 }
 
-/* Responsive Adjustments */
-@media (width <= 768px) {
-    .site-header {
-        padding: var(--spacing-sm) 0;
-    }
-
-    .site-header .wrapper {
-        padding: 0 var(--spacing-md);
-    }
-
-    .site-title {
-        font-size: 1.25rem;
-    }
-    
-    /* Mobile Navigation Styles */
-    .menu-icon {
-        display: block;
-    }
-
-    .site-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--color-foreground);
-        padding: var(--spacing-md);
-        border-bottom: 1px solid var(--color-border);
-        flex-direction: column;
-        gap: var(--spacing-md);
-    }
-
-    .site-nav.active {
-        display: flex;
-    }
-}
-
 /* blogposts */
 
 /* Home Page Container */
@@ -289,26 +252,6 @@ ul, ol {
     margin: var(--spacing-md) 0;
 }
 
-/* Responsive Adjustments */
-@media (width <= 768px) {
-    .home {
-        padding: 0 var(--spacing-md);
-    }
-    
-    .post-item {
-        padding: var(--spacing-lg);
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .post-link {
-        font-size: 1.5rem;
-    }
-    
-    .post-excerpt {
-        font-size: 1rem;
-    }
-}
-
 /* Post Container */
 .post {
     background-color: var(--color-foreground);
@@ -361,25 +304,6 @@ ul, ol {
     border-bottom-color: var(--color-primary-dark);
     text-decoration: none;
 }
-
-/* Responsive Adjustments */
-@media (width <= 768px) {
-    .post {
-        padding: var(--spacing-lg) var(--spacing-md);
-        margin: var(--spacing-md) var(--spacing-sm);
-        border-radius: 6px;
-    }
-
-    .post-title {
-        font-size: 2rem;
-    }
-
-    .post-content {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
-}
-
 
 /* Code Block Container */
 .highlight {
@@ -521,25 +445,7 @@ code {
     color: var(--color-primary);
 }
 
-/* Responsive Adjustments */
-@media (width <= 768px) {
-    .footer-col-wrapper {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
 
-    .site-footer {
-        padding: var(--spacing-lg) var(--spacing-md);
-    }
-
-    .footer-col {
-        margin-bottom: var(--spacing-lg);
-    }
-
-    .social-media-list li {
-        margin-bottom: var(--spacing-xs);
-    }
-}
 
 
 
