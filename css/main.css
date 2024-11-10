@@ -6,20 +6,16 @@
     --color-primary-content: #d2e0b9;
     --color-primary-dark: #39481f;
     --color-primary-light: #718e3f;
-
     --color-secondary: #6b2f37;
     --color-secondary-content: #e0b9be;
     --color-secondary-dark: #481f25;
     --color-secondary-light: #8e3f49;
-
     --color-background: #f0f2ed;
     --color-foreground: #fbfcfb;
     --color-border: #e0e4da;
-
     --color-copy: #282c21;
     --color-copy-light: #5F6A4E;
     --color-copy-lighter: #73815F;
-    
     --color-success: #2f6b2f;
     --color-warning: #6b6b2f;
     --color-error: #6b2f2f;
@@ -197,8 +193,30 @@ label {
 }
 
 .post-meta {
-    font-size: 0.8rem; /*TODO*/
+    font-size: 0.8rem;
     color: var(--color-copy-lighter);
+}
+
+/* socials */
+
+/* Style for social media icons in footer */
+.footer-col .icon {
+    display: inline-block;
+    height: 1em;  /* Match line height */
+    width: 1em;   /* Keep square aspect ratio */
+    vertical-align: middle;  /* Align with text */
+    margin-right: 0.3em;    /* Small space between icon and username */
+}
+
+.footer-col ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-col li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
 }
 
 /* Utility classes */
@@ -212,6 +230,7 @@ label {
 .hidden {
     display: none !important;
 }
+
 
 /* Responsive adjustments */
 @media (width <= 768px) {
