@@ -190,6 +190,17 @@ label {
     margin-bottom: var(--spacing-xs);
 }
 
+/* blogroll */
+
+.post-list {
+    list-style: none;
+}
+
+.post-meta {
+    font-size: 0.8rem; /*TODO*/
+    color: var(--color-copy-lighter);
+}
+
 /* Utility classes */
 .text-center { text-align: center; }
 .text-right { text-align: right; }
