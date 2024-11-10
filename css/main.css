@@ -311,14 +311,6 @@ ul, ol {
     }
 }
 
-/* Code Blocks */
-.post-content code {
-    background-color: var(--color-background);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: 4px;
-    font-size: 0.9em;
-    color: var(--color-primary-dark);
-}
 
 /* Code Block Container */
 .highlight {
