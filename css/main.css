@@ -116,6 +116,102 @@ ul, ol {
 
 /* blogposts */
 
+/* Post Container */
+.post {
+    background-color: var(--color-foreground);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-width: var(--container-max);
+    margin-inline: auto;
+}
+
+/* Post Header */
+.post-header {
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-lg);
+}
+
+.post-title {
+    color: var(--color-primary-dark);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+}
+
+/* Post Content */
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-copy);
+}
+
+.post-content p {
+    margin-bottom: var(--spacing-lg);
+}
+
+.post-content a {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary-light);
+    transition: all 0.2s ease;
+}
+
+.post-content a:hover {
+    color: var(--color-primary-dark);
+    border-bottom-color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+/* Post Metadata */
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--color-copy-light);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .post {
+        padding: var(--spacing-lg) var(--spacing-md);
+        margin: var(--spacing-md) var(--spacing-sm);
+        border-radius: 6px;
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Code Blocks */
+.post-content code {
+    background-color: var(--color-background);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--color-primary-dark);
+}
+
+/* Lists in Posts */
+.post-content ul,
+.post-content ol {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+}
+
+.post-content li {
+    margin-bottom: var(--spacing-sm);
+}
+
 
 
 /* Responsive adjustments */
