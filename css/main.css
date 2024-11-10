@@ -1,32 +1,48 @@
 /* Custom properties for easy theming */
 :root {
-  /* Colors */
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-secondary: #475569;
-  --color-accent: #f59e0b;
-  --color-text: #1f2937;
-  --color-text-light: #6b7280;
-  --color-background: #fff;
-  --color-background-alt: #f3f4f6;
-  --color-border: #e5e7eb;
-  
-  /* Typography */
-  --font-primary: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
-  --font-headings: var(--font-primary);
-  --font-monospace: ui-monospace, sfmono-regular, menlo, monaco, consolas, monospace;
-  
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  
-  /* Layout */
-  --container-max: 65rem;
-  --container-padding: var(--spacing-md);
+    /* Colors */
+
+    --color-primary: #556b2f;
+    --color-primary-content: #d2e0b9;
+    --color-primary-dark: #39481f;
+    --color-primary-light: #718e3f;
+
+    --color-secondary: #6b2f37;
+    --color-secondary-content: #e0b9be;
+    --color-secondary-dark: #481f25;
+    --color-secondary-light: #8e3f49;
+
+    --color-background: #f0f2ed;
+    --color-foreground: #fbfcfb;
+    --color-border: #e0e4da;
+
+    --color-copy: #282c21;
+    --color-copy-light: #6a7557;
+    --color-copy-lighter: #919d7b;
+
+    --color-success: #2f6b2f;
+    --color-warning: #6b6b2f;
+    --color-error: #6b2f2f;
+    --color-success-content: #b9e0b9;
+    --color-warning-content: #e0e0b9;
+    --color-error-content: #e0b9b9;
+
+    /* Typography */
+    --font-primary: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+    --font-headings: var(--font-primary);
+    --font-monospace: ui-monospace, sfmono-regular, menlo, monaco, consolas, monospace;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+    /* Layout */
+    --container-max: 65rem;
+    --container-padding: var(--spacing-md);
 }
 
 /* Reset and base styles */
@@ -44,7 +60,7 @@ html {
 body {
   font-family: var(--font-primary);
   line-height: 1.6;
-  color: var(--color-text);
+  color: var(--color-copy);
   background-color: var(--color-background);
 }
 
@@ -53,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headings);
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
-  color: var(--color-text);
+  color: var(--color-copy);
 }
 
 h1 { font-size: 2.5rem; }
@@ -80,7 +96,7 @@ a:hover {
 
 code {
   font-family: var(--font-monospace);
-  background: var(--color-background-alt);
+  background: var(--color-foreground);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 4px;
   font-size: 0.9em;
@@ -157,7 +173,7 @@ th, td {
 }
 
 th {
-  background: var(--color-background-alt);
+    background: var(--color-foreground);
 }
 
 /* Forms */
@@ -177,7 +193,7 @@ label {
 /* Utility classes */
 .text-center { text-align: center; }
 .text-right { text-align: right; }
-.text-light { color: var(--color-text-light); }
+.text-light { color: var(--color-copy-light); }
 
 .margin-top { margin-top: var(--spacing-md); }
 .margin-bottom { margin-bottom: var(--spacing-md); }
