@@ -320,6 +320,41 @@ ul, ol {
     color: var(--color-primary-dark);
 }
 
+/* Code Block Container */
+.highlight {
+    margin: var(--spacing-lg) 0;
+    background-color: var(--color-background);
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* Code Block */
+.highlight pre {
+    padding: var(--spacing-md);
+    margin: 0;
+    white-space: pre;
+    font-family: var(--font-monospace);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Inline Code */
+code {
+    font-family: var(--font-monospace);
+    background-color: var(--color-background);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Ensure code blocks don't overflow their containers */
+.post-content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+
 /* Lists in Posts */
 .post-content ul,
 .post-content ol {
