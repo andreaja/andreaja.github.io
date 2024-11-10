@@ -95,12 +95,6 @@ ul, ol {
     padding-left: var(--spacing-lg);
 }
 
-/* blogroll */
-
-.post-list {
-    list-style: none;
-}
-
 /* Header Container */
 .site-header {
     background-color: var(--color-foreground);
@@ -227,6 +221,94 @@ ul, ol {
 
 /* blogposts */
 
+/* Home Page Container */
+.home {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Post List */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Post Item */
+.post-item {
+    background-color: var(--color-foreground);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
+}
+
+/* Post Title */
+.post-item h2 {
+    margin: 0 0 var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.post-link {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.post-link:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* Post Metadata */
+.post-meta {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-copy-light);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Post Excerpt */
+.post-excerpt {
+    line-height: 1.6;
+    color: var(--color-copy);
+    margin-top: var(--spacing-md);
+}
+
+.post-excerpt p {
+    margin: 0;
+}
+
+/* Code blocks within excerpts */
+.post-excerpt pre {
+    overflow-x: auto;
+    max-width: 100%;
+    margin: var(--spacing-md) 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .home {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .post-item {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .post-link {
+        font-size: 1.5rem;
+    }
+    
+    .post-excerpt {
+        font-size: 1rem;
+    }
+}
+
 /* Post Container */
 .post {
     background-color: var(--color-foreground);
@@ -278,15 +360,6 @@ ul, ol {
     color: var(--color-primary-dark);
     border-bottom-color: var(--color-primary-dark);
     text-decoration: none;
-}
-
-/* Post Metadata */
-.post-meta {
-    font-size: 0.9rem;
-    color: var(--color-copy-lighter);
-    margin-top: var(--spacing-xl);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--color-border);
 }
 
 /* Responsive Adjustments */
@@ -467,4 +540,6 @@ code {
         margin-bottom: var(--spacing-xs);
     }
 }
+
+
 
