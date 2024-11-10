@@ -38,7 +38,7 @@
 
     /* Layout */
     --container-max: 65rem;
-    --container-padding: var(--spacing-md);
+    --container-padding: max(var(--spacing-md), env(safe-area-inset-left, var(--spacing-md)));
 }
 
 /* Reset and base styles */
@@ -53,11 +53,46 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--color-copy);
     background-color: var(--color-background);
+}
+
+/* Ensure proper viewport behavior */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* prevent overflow */
+.wrapper,
+.site-header .wrapper,
+.page-content .wrapper,
+.home,
+.post {
+    width: 100%;
+    max-width: min(var(--container-max), 100%);
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    box-sizing: border-box;
+}
+
+/* Ensure code blocks and pre elements don't cause overflow */
+pre, code, .highlight {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Ensure images don't cause overflow */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Typography */
@@ -369,9 +404,10 @@ code {
 /* Footer Columns Layout */
 .footer-col-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
+    width: 100%;
 }
 
 /* Social Media List */
