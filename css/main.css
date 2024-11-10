@@ -290,7 +290,7 @@ ul, ol {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .home {
         padding: 0 var(--spacing-md);
     }
