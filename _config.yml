@@ -10,6 +10,7 @@ timezone: Europe/Oslo
 permalink: /:year/:month/:day/:title/
 twitter_username: andreaja
 github_username:  andreaja
+linkedin_username: andreasjacobsen
 excerpt_separator: <!--more-->
 
 # Build settings

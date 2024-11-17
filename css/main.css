@@ -224,7 +224,30 @@ ul, ol {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+    background-color: var(--color-foreground);
 }
+
+/* Home subtitle styling */
+.home-subtitle {
+    color: var(--color-copy-light);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Adjust home content layout */
+.home-content {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) 0;
+}
+
+/* Ensure proper spacing between elements */
+.home-content h1 {
+    margin-bottom: var(--spacing-md);
+}
+
 
 /* Post List */
 .post-list {
