@@ -5,6 +5,7 @@
 {% include opengraph.html %}
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <script src="{{ '/js/link-interaction.js' | relative_url }}" defer></script>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   {% seo %}
 </head>
