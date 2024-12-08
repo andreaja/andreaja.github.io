@@ -168,9 +168,6 @@ ul, ol {
     padding: var(--spacing-xl) 0;
 }
 
-.frontpage-content {
-}
-
 .page-content .wrapper,
 .frontpage-content .wrapper {
     margin: 0 auto;
@@ -235,7 +232,7 @@ ul, ol {
     margin-right: calc(-50vw + 50%);
     background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
     padding: var(--spacing-2xl) 0;
-    margin-bottom: var(--spacing-);
+    margin-bottom: var(--spacing-l);
     color: var(--color-primary-content);
     position: relative;
     overflow: hidden;
@@ -244,11 +241,8 @@ ul, ol {
 .hero-section::after {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.1) 100%);
+    inset: 0;
+    background: linear-gradient(45deg, rgb(0 0 0 / 10%) 0%, rgb(255 255 255 / 10%) 100%);
     pointer-events: none;
 }
 
@@ -397,12 +391,6 @@ ul, ol {
     transition: all 0.2s ease;
 }
 
-.post-content a:hover {
-    color: var(--color-primary-dark);
-    border-bottom-color: var(--color-primary-dark);
-    text-decoration: none;
-}
-
 /* Code Block Container */
 .highlight {
     margin: var(--spacing-lg) 0;
@@ -491,10 +479,6 @@ code {
     transition: color 0.2s ease;
 }
 
-.social-media-list a:hover {
-    color: var(--color-primary);
-    text-decoration: none;
-}
 
 /* Social Icons */
 .icon {
@@ -542,4 +526,15 @@ code {
 
 .footer-footer a {
     color: var(--color-primary);
+}
+
+.post-content a:hover {
+    color: var(--color-primary-dark);
+    border-bottom-color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+.social-media-list a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
 }
