@@ -168,8 +168,11 @@ ul, ol {
     padding: var(--spacing-xl) 0;
 }
 
-.page-content .wrapper {
-    max-width: var(--container-max);
+.frontpage-content {
+}
+
+.page-content .wrapper,
+.frontpage-content .wrapper {
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
 }
@@ -217,23 +220,66 @@ ul, ol {
     padding: var(--spacing-sm);
 }
 
-/* blogposts */
-
 /* Home Page Container */
 .home {
-    max-width: var(--container-max);
+    max-width: 100vw;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
     background-color: var(--color-foreground);
 }
 
-/* Home subtitle styling */
-.home-subtitle {
-    color: var(--color-copy-light);
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-xl);
+/* Hero section styles */
+.hero-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    padding: var(--spacing-2xl) 0;
+    margin-bottom: var(--spacing-);
+    color: var(--color-primary-content);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.1) 100%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: min(var(--container-max), 100%);
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--container-padding);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-foreground);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary-content);
     font-weight: 500;
-    line-height: 1.4;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    max-width: 36rem;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--color-primary-content);
 }
 
 /* Adjust home content layout */
@@ -241,11 +287,6 @@ ul, ol {
     max-width: 42rem;
     margin: 0 auto;
     padding: var(--spacing-2xl) 0;
-}
-
-/* Ensure proper spacing between elements */
-.home-content h1 {
-    margin-bottom: var(--spacing-md);
 }
 
 /* Post List */
@@ -502,8 +543,3 @@ code {
 .footer-footer a {
     color: var(--color-primary);
 }
-
-
-
-
-

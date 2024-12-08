@@ -9,6 +9,7 @@ timezone: Europe/Oslo
 permalink: /:year/:month/:day/:title/
 twitter_username: andreaja
 github_username:  andreaja
+bluesky_username: andreasjacobsen.com
 linkedin_username: andreasjacobsen
 excerpt_separator: <!--more-->
 
