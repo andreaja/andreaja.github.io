@@ -13,6 +13,9 @@ bluesky_username: andreasjacobsen.com
 linkedin_username: andreasjacobsen
 excerpt_separator: <!--more-->
 
+exclude:
+  - cleaned/
+
 # Build settings
 highlighter: rouge
 markdown: kramdown
