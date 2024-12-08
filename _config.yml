@@ -16,6 +16,9 @@ excerpt_separator: <!--more-->
 highlighter: rouge
 markdown: kramdown
 
+include:
+  - .well-known
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
