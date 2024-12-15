@@ -442,21 +442,6 @@ code {
     font-size: 0.9rem;
 }
 
-/* Footer Credits */
-.footer-footer {
-    display: block;
-    text-align: center;
-    margin-top: var(--spacing-xl);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--color-border);
-    color: var(--color-copy-lighter);
-    font-size: 0.8rem;
-}
-
-.footer-footer a {
-    color: var(--color-primary);
-}
-
 .post-content a:hover {
     color: var(--color-primary-dark);
     border-bottom-color: var(--color-primary-dark);
