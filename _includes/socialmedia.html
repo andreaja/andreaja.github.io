@@ -1,5 +1,4 @@
 <ul class="social-media-list">
-  {% if site.github_username %}
   <li>
     <a href="https://github.com/{{ site.github_username }}">
       <span class="icon  icon--github">
@@ -8,26 +7,6 @@
       <span class="username">Github</span>
     </a>
   </li>
-  {% endif %}
-
-  {% if site.twitter_username %}
-  <li>
-    <a href="https://x.com/{{ site.twitter_username }}">
-      <span class="icon  icon--twitter">
-        <img src="/assets/logos/x-logo.svg" alt="x logo"/>
-      </span>
-      <span class="username">X</span>
-    </a>
-    /
-    <a href="https://bluesky.com/profile/{{ site.bluesky_username }}">
-      <span class="icon  icon--bluesky">
-        <img src="assets/logos/bluesky-logo.svg" alt="bluesky logo"/>
-      </span>
-      <span class="username">Bluesky</span>
-    </a>
-  </li>
-  {% endif %}
-  {% if site.linkedin_username %}
   <li>
     <a href="https://www.linkedin.com/in/-{{ site.linkedin_username}}">
       <span class="icon  icon--linkedin">
@@ -36,7 +15,23 @@
       <span class="username">LinkedIn</span>
     </a>
   </li>
-  {% endif %}
-
-  <li><a id="link-interaction" rel="nofollow, noindex" href="to-andreas/">Email</a></li>
+  <li>
+    <a href="https://bluesky.com/profile/{{ site.bluesky_username }}">
+      <span class="icon  icon--bluesky">
+        <img src="assets/logos/bluesky-logo.svg" alt="bluesky logo"/>
+      </span>
+      <span class="username">Bluesky</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://x.com/{{ site.twitter_username }}">
+      <span class="icon  icon--twitter">
+        <img src="/assets/logos/x-logo.svg" alt="x logo"/>
+      </span>
+      <span class="username">Twitter</span>
+    </a>
+  </li>
+  <li>
+    <a id="link-interaction" rel="nofollow, noindex" href="to-andreas/">Contact</a>
+  </li>
 </ul>
