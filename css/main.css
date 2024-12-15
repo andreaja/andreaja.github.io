@@ -236,6 +236,14 @@ ul {
     padding: var(--spacing-2xl) 0;
 }
 
+/* Adjust home content layout */
+.talks-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) 0;
+}
+
+
 /* Post List */
 .post-list {
     list-style: none;
