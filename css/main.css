@@ -401,11 +401,12 @@ code {
 
 /* Social Icons */
 .icon {
-    display: inline-block;
+    display: flex;
     width: 16px;
     height: 16px;
     margin-right: var(--spacing-sm);
     vertical-align: middle;
+    align-items: center;
 }
 
 .icon svg {
