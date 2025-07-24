@@ -4,7 +4,7 @@ owner:
   display_name: Andreas
 description: Another cause of procrastination
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://andreasjacobsen.com" # the base hostname & protocol for your site
+url: "https://andreasjacobsen.com" # the base hostname & protocol for your site
 timezone: Europe/Oslo
 permalink: /:year/:month/:day/:title/
 twitter_username: andreaja
